@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      document.getElementById("myDiv").innerHTML = ""; //Clear the div
+      document.getElementById("myDiv").innerText = "This text replaces the previous content."; //Attempt to add new text
+      //Bug: The above doesn't work in all browsers reliably
+    }
+  </script>
+</body>
+</html>
